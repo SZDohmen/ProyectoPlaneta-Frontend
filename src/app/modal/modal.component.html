@@ -1,0 +1,51 @@
+<div class="modal" *ngIf="visible" tabindex="-1" role="dialog">
+    <div class="contenedor">
+        <div>
+            <div>
+                <div class="modalHeader">
+                    <h4 *ngIf="getId != 0">Editar: {{planeta.name}}</h4>
+                    <h4 *ngIf="getId === 0">Nuevo Planeta</h4>
+                    <span (click)="cancelar()">x</span>
+                </div>
+
+                <div class="modalContent">
+
+                    <div [formGroup]="formularioCreado">
+                        <div class="input-group mb-3">
+                            <span style="width: 90px;" class="input-group-text" id="basic-addon1">Nombre</span>
+                            <input type="text" class="form-control" formControlName="name" [(ngModel)]="planeta.name">
+                            <div class="alert alert-danger" role="alert"
+                                *ngIf="formularioCreado.controls['name'].invalid && formularioCreado.controls['name'].dirty">
+                                Nombre no valido
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span style="width: 90px;" class="input-group-text" id="basic-addon1">Tamaño</span>
+                            <input type="text" class="form-control" formControlName="size" [(ngModel)]="planeta.size">
+                            <div class="alert alert-danger" role="alert"
+                                *ngIf="formularioCreado.controls['size'].invalid && formularioCreado.controls['size'].dirty">
+                                Tamaño no valido
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span style="width: 90px;" class="input-group-text mr-3" id="basic-addon1">Habitable</span>
+                        <p class="font-weight-bold">Si</p>
+                        <input class="mr-2 ml-2" type="radio" name="habitable" [(ngModel)]="planeta.habitable" [value]="true">
+                        <p class="font-weight-bold">No</p>
+                        <input class="mr-2 ml-2" type="radio" name="habitable" [(ngModel)]="planeta.habitable" [value]="false">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-info" (click)="save(getId)"
+                            [disabled]="!formularioCreado.valid">Guardar</button>
+                        <button class="btn btn-info" (click)="cancelar()">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

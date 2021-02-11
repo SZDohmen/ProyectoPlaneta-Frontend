@@ -1,0 +1,58 @@
+:host {
+    .modal {
+        display: table;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4); //transparencia negra
+    }
+    .contenedor {        
+        display: table-cell;
+        vertical-align: middle; //lo centra a nivel vertical
+        & > div {
+            background-image:url( 'https://bestanimations.com/uploads/gifs/1184781408saturn-planet-animation-11.gif' );
+            background-size: 500px;
+            width: 300px;
+            height: 300px;
+            color: #ffffff;
+            background-color: #16171e;
+            margin: 0 auto; //lo centra a nivel horizontal
+            padding: 1rem; //marquito para interior del modal
+            border-radius: 5px; //vertices redondeadas
+            box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+        }
+    }
+    .modalHeader {
+        position:relative;
+        h2{
+            margin:0;
+        }
+        span{
+            position:absolute; //creo que era para que se pudiera mover dentro del modal sin limitaciones de otros elementos
+            top:0;
+            right:0;
+            cursor:pointer;
+            font-size: 1.3rem;
+            &:hover{ //colorcito al que cambia la x cuando se pasa el mouse por encima
+                color: orange;
+            }
+        }
+    }
+    .modalContent {
+        padding-top: 1rem; //margen de arriba
+    }
+    .button {
+        margin: 3px;
+    }
+    .radioBox {
+        position:absolute;
+    }
+
+    .alert {
+        color: #ffffff;    
+        border-color: #dd4343;
+        background-color: #dd4343;
+        position:absolute;
+        margin-top: 50px;
+        z-index:5;
+    }
+}

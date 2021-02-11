@@ -1,0 +1,35 @@
+:host {
+    .modal {
+        display: table;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4); //transparencia negra
+    }
+    .contenedor {        
+        display: table-cell;
+        vertical-align: middle; //lo centra a nivel vertical
+        & > div {
+            background-image:url('https://lh3.googleusercontent.com/proxy/nCrlm1Yx4s2A09VNS8KvitNJPyvdH1i8nUVDzoAowzy-PQhemc-PeALWl-kzrulwEt1J4ByGOEb2ulpzMrVmyuYJbmGliKWSmCqIeAS0M3mhpBioQpovfTQ8GGodpJUDKxXS');
+            background-position: 50% 60%;
+            background-size: 500px;
+            width: 200px;
+            height: 130px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #16171e;
+            margin: 0 auto; //lo centra a nivel horizontal
+            padding: 1rem; //marquito para interior del modal
+            border-radius: 5px; //vertices redondeadas
+            box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+        }
+    }
+    .modalHeader {
+        position:relative;
+        h2{
+            margin:0;
+        }
+    }    
+    .button {
+        margin: 3px;
+    }
+}

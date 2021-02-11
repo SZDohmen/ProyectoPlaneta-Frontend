@@ -1,0 +1,38 @@
+.btn-info {
+    color: #ffffff;
+    background-color: #3c95af;
+    border-color: #3c95af
+}
+
+.close {
+    color: #ffffff;
+}
+
+.cruz{
+    position:absolute; //creo que era para que se pudiera mover dentro del modal sin limitaciones de otros elementos
+    top:0;
+    right:5px;
+    cursor:pointer;
+    font-size: 1.3rem;
+    &:hover{ //colorcito al que cambia la x cuando se pasa el mouse por encima
+        color: orange;
+    }
+}
+
+.buscador {
+    position:absolute;
+    top:48px;
+    right:50px;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 255px;
+    margin: 10px;
+    color: #ffffff;
+    background-color: #16171e;
+
+    //text-align: center; //centra el contenido de la carta
+}

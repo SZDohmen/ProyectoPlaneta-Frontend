@@ -1,0 +1,41 @@
+<!-- Buscador de Planetas -->
+<div class="buscador">
+    <form class="form-group">
+        <input class="form-control margen-top-5" type="text" placeholder="Buscar planeta..." style="width: 255px;"
+            name="filterPost" [(ngModel)]="filterPost">
+    </form>
+</div>
+
+
+<!-- Boton Nuevo Planeta -->
+<button class="btn btn-info mb-2" (click)="edit(0)">Nuevo Planeta</button>
+
+<div class="ml-2">
+    <!-- Tabla de Cartas -->
+    <div class="row">
+        <!-- creamos una fila-->
+        <div class="col-xs-4" *ngFor="let p of planetas | filter:filterPost">
+            <!--creamos columna-->
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title"> {{p.name}} </h3>
+                    <h6 class="card-subtitle"> {{p.size}} km </h6>
+                    <p class="card-text" *ngIf="p.habitable == true"> Habitable </p>
+                    <p class="card-text" *ngIf="p.habitable == false"> No Habitable </p>
+                    <button class="btn btn-info m-2" (click)="edit(p.id)">Editar</button>
+                    <button class="btn btn-danger m-2" (click)="delete(p.id)">Destruir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- App Modal -->
+<div *ngIf="myModal===true">
+    <app-modal [visible]="myModal" [getId]="idModal" (close)="closeModal($event)"> </app-modal>
+</div>
+
+<!-- App Destroyed -->
+<div *ngIf="myDestroy===true">
+    <app-destroyed [vDes]="myDestroy" (close)="closeModal($event)"> </app-destroyed>
+</div>

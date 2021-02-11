@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* esta parte es la capa negra transparete del modal */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body{
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+}
+
