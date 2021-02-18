@@ -30,7 +30,8 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.crearFormulario(); //mm no se che
+    //para las validaciones
+    this.crearFormulario();
 
     if(this.getId != 0){
       this.getOne(this.getId);
@@ -56,13 +57,12 @@ export class ModalComponent implements OnInit {
   save(id:number){
     this.service.post(this.planeta).subscribe(
       data => {
-        //this.validator();
         console.log(data);
         if(id===0){
-          alert("Planeta guardado con exito!");
+          alert("¡Planeta guardado con exito!");
           this.formularioCreado.reset();
         } else {
-          alert("Planeta actualizado con exito!");
+          alert("¡Planeta actualizado con exito!");
         }  
       }
     );

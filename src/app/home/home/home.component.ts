@@ -39,12 +39,12 @@ export class HomeComponent implements OnInit {
 
   //-------- Metodo ~ Elimina carta correspondiente
   delete(id:number) {
-      this.myDestroy=true;
-      this.service.delete(id).subscribe(
-        data => {
-          console.log(data);
-        }
-      );
+    this.myDestroy=true;
+    this.service.delete(id).subscribe(
+      data => {
+        console.log(data);
+      }
+    );
   }
 
   //-------- Metodo ~ Despliega el modal
@@ -56,11 +56,6 @@ export class HomeComponent implements OnInit {
     } else {
       this.idModal = 0;
     }
-  }
-
-  d(id:number){
-    this.myDestroy=true;
-    this.idModal = id;
   }
 
   //-------- Metodo ~ Cierra el modal
